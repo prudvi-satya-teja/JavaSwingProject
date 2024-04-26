@@ -24,7 +24,7 @@ public class DbConnector2 {
      @Override
     public void actionPerformed(ActionEvent e) {
         JFrame window2 = new JFrame();
-        window2.setTitle("ENTER STUDENT DETAILS");
+        window2.setTitle("Enter student details");
         window2.setLayout(null);
 
         //Label
@@ -221,7 +221,7 @@ public class DbConnector2 {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame window3 = new JFrame();
-                window3.setTitle("DELETE STUDENT");
+                window3.setTitle("Delete Student ");
                 window3.setLayout(null);
 
                 JLabel lb1 = new JLabel();
@@ -372,7 +372,7 @@ public class DbConnector2 {
                 window4.setSize(500,200);
                 window4.setLayout(null);
                 window4.setLocation(300, 200);
-                window4.setTitle("UPDATE STUDENT DETAILS");
+                window4.setTitle("Update Student details");
 
                 JLabel lb1 = new JLabel();
                 lb1.setText("Enter Roll No: ");
@@ -422,7 +422,8 @@ public class DbConnector2 {
                             String password = "3495";
                             Connection connection = DriverManager.getConnection(url, user, password);
                             Statement statement = connection.createStatement();
-                            String query = "SELECT * FROM student where rollno = "+rollno;
+                            String query = "SELECT * FROM student WHERE rollno = '" + rollno + "'";
+
                             ResultSet resultSet = statement.executeQuery(query);
                             int columnCount = resultSet.getMetaData().getColumnCount();
                             for (int i = 1; i <= columnCount; i++) {
@@ -569,7 +570,7 @@ public class DbConnector2 {
                 public void actionPerformed(ActionEvent e1) {
 
                     JFrame frame = new JFrame();
-                    frame.setTitle("ALL STUDENT DETAILS");
+                    frame.setTitle("Table data");
                     JPanel panel = new JPanel();
                     JTable table = new JTable();
                     DefaultTableModel model = new DefaultTableModel();
@@ -632,7 +633,7 @@ public class DbConnector2 {
 
         // An object of JFrame class
          JFrame window = new JFrame();
-         window.setTitle("STUDENT DATA");
+         window.setTitle("Student data");
          window.setLayout(null);
 
          
