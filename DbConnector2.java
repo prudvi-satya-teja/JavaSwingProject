@@ -9,18 +9,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.table.DefaultTableModel;
 
 public class DbConnector2 {
-
-
         // Connection details
         static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
         static final String DB_URL = "jdbc:mysql://localhost:3306/javaproject";
         static final String USER = "root";
         static final String PASS = "3495";
-
  ///--------------------------------------------------------------------------------------------------------------------------
     // Insert 
     public static class  ActionListener1  implements ActionListener{
-
      @Override
     public void actionPerformed(ActionEvent e) {
         JFrame window2 = new JFrame();
@@ -55,14 +51,12 @@ public class DbConnector2 {
         JTextField tf1 = new JTextField();
         tf1.setBounds(120, 65, 150, 25);
         
-
         JTextField tf2 = new JTextField();
         tf2.setBounds(120, 95, 150, 25);
 
         JTextField tf3 = new JTextField();
         tf3.setBounds(120, 125, 150, 25);
         
-
         JTextField tf4 = new JTextField();
         tf4.setBounds(120, 155, 150, 25);
 
@@ -89,8 +83,6 @@ public class DbConnector2 {
                 String branch = tf5.getText().trim().toUpperCase();
                 String gender = tf6.getText().trim();
 
-                
-                
                 if(rollNo.isEmpty()) {
                     JOptionPane.showMessageDialog(tf1, "Please enter valid RollNo ","Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -181,15 +173,12 @@ public class DbConnector2 {
                          } else {
                           // User clicked "No" or closed the dialog, no action required
                         }
-                                    
-
                     }  
                 }
         
             }
             
         });
-
 
         window2.add(lb1);
         window2.add(lb2);
@@ -213,8 +202,6 @@ public class DbConnector2 {
     }
 }
 
-
-
  ///--------------------------------------------------------------------------------------------------------------------------
 // DELETE
     public static class  ActionListener2  implements ActionListener {
@@ -230,12 +217,10 @@ public class DbConnector2 {
 
                 JTextField tf1 = new JTextField();
                 tf1.setBounds(150, 50, 150 , 25);
-              
 
                 JButton delete = new JButton();
                 delete.setText("Submit");
                 delete.setBounds(100, 100, 150, 25);
-
 
                 delete.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -294,20 +279,9 @@ public class DbConnector2 {
                 window3.setLocation(200, 200);
             }
        } 
-       
-
-       
  ///--------------------------------------------------------------------------------------------------------------------------
          //    // update
-
-         
-
-        
-
          public static  class ActionListener3 implements ActionListener {
-
-          
-
             public static void execute(String selected, String text, String rollNo, JFrame window4) {
 
                 Connection conn = null;
@@ -331,7 +305,6 @@ public class DbConnector2 {
                     // pstmt.setString(2, rollNo); // Name
                     pstmt.setString(1, text); // Value to be updated
                     pstmt.setString(2, rollNo); // Roll number condition
-        
         
                     // Execute the INSERT statement
                     int rowsAffected = pstmt.executeUpdate();
@@ -359,9 +332,7 @@ public class DbConnector2 {
                         window4.dispose();
                                 //  } else {
                                 //   // User clicked "No" or closed the dialog, no action required
-                                // }
-                                            
-        
+                                // }                 
 
             }
             @Override
@@ -449,24 +420,15 @@ public class DbConnector2 {
             frame.setResizable(false);
             frame.setSize(600,600);
             frame.setVisible(true);
-    
-    
-                        
                     }}
                 });
            
-
-
-           
-                
 
                 JButton update = new JButton();
                 update.setText("Submit");
                 update.setBounds(350, 100, 100, 25);
                 update.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-
-                
 
                 String selected = (String) jcb1.getSelectedItem();
                 String rollNo = tf1.getText().trim();
@@ -548,25 +510,6 @@ public class DbConnector2 {
         @SuppressWarnings("unchecked")
         @Override
 
-        // public void actionPerformed(ActionEvent e) {
-
-        //     JFrame window5 = new JFrame();
-        //     window5.setVisible(true);
-        //     window5.setLayout(null);
-        //     window5.setSize(400,300);
-        //     window5.setLocation(400, 200);
-
-        //     @SuppressWarnings("rawtypes")
-        //     JComboBox cb1 = new JComboBox();
-        //     cb1.setSize(500, 500);
-        //     cb1.setBounds(100, 100, 200, 30);
-
-        //     JButton jb1 = new JButton();
-        //     jb1.setText("Submit");
-        //     jb1.setBounds(150, 150, 100, 30);
-        //     window5.add(jb1);
-        //     jb1.addActionListener(new ActionListener() {
-
                 public void actionPerformed(ActionEvent e1) {
 
                     JFrame frame = new JFrame();
@@ -608,23 +551,8 @@ public class DbConnector2 {
         frame.setSize(600,600);
         frame.setVisible(true);
         frame.setLocation(400, 200);
-
-
-                    
                 }
             }
-            // ); 
-
-    //         cb1.addItem("All data");
-    //         cb1.addItem("AEC data");
-    //         cb1.addItem("ACES data");
-    //         cb1.addItem("ACET data");
-
-    //         window5.add(cb1);
-    //     }
-    // }
-    
-
 
  ///--------------------------------------------------------------------------------------------------------------------------
        public static void main(String[] args) {
@@ -635,8 +563,6 @@ public class DbConnector2 {
          JFrame window = new JFrame();
          window.setTitle("Student data");
          window.setLayout(null);
-
-         
 
          JLabel jb1 = new JLabel();
          jb1.setText("Aditya Educational Institutions");
@@ -684,7 +610,3 @@ public class DbConnector2 {
 
     }
 }
-
-
-
-
